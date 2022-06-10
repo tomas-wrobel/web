@@ -6,15 +6,17 @@ layout: default
 {% assign certificates = site.static_files | where: "extname", ".pdf" %}
 {% assign index = page.slug | minus: 1 %}
 {% for certificate in certificates offset: index limit: 3 %}
-    <object data="{{certificate.path}}" class="certificate">
+    <object data='{{certificate.path | replace: "#", "%23"}}' class="certificate">
 		<h3>{{certificate.basename}}</h3>
 		<p>Your browser doesn't support embedding PDFs.</p>
 	</object>
+	<br>
+	<br>
 {% endfor %}
 {% assign pages = certificates.size | divided_by: 3 %}
 <div class="pagination">
 	{% if index > 1 %}
-		<a href="{{include.index}}">&laquo;</a>
+		<a href="{{page.slug}}">&laquo;</a>
 	{% endif %}
 	{% for n in (1..pages) %}
 		{% if n == index %}
