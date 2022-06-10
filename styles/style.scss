@@ -1,3 +1,7 @@
+---
+---
+
+// Stop being "Word document"
 html, body {
 	padding: 0;
 	margin: 0;
@@ -6,6 +10,7 @@ html, body {
 	scroll-behavior: smooth;
 }
 
+// The wrap is a grid.
 #wrap {
 	display: grid;
 	grid-template-areas:
@@ -17,6 +22,7 @@ html, body {
 	grid-template-rows: 100vh 100vh auto;
 }
 
+// Checkbox
 #responsive {
 	all: unset;
 	z-index: 10;
@@ -56,89 +62,89 @@ nav {
 	position: sticky;
 	z-index: 20;
 	top: 0;
-}
 
-nav > ul {
-	display: contents;
-}
+	li {
+		all: unset;
+		display: inline-block;
+		font-size: 17px;
+		text-align: center;
+		padding: 14px 16px;
+		cursor: pointer;
 
-nav li {
-	all: unset;
-	display: inline-block;
-	font-size: 17px;
-	text-align: center;
-	padding: 14px 16px;
-	cursor: pointer;
-}
+		> a {
+			all: unset;
+		}
+	}
 
-nav > ul > li {
-	color: white;
-}
+	> ul {
+		display: contents;
 
-nav > ul > li:hover {
-	background-color: blue;
-}
+		> li {
+			color: white;
 
-:not(:checked) + nav > ul > #home > a::after {
-	content: "Tomáš Wróbel";
-	font-family: serif;
-}
+			&:hover {
+				background-color: blue;
+			}
 
-:not(:checked) + nav > ul > #home > a::before {
-	content: "TW";
-	font-family: cursive;
-	margin-right: 0.5em;
-	font-size: 0.9em;
-	background: blue;
-	padding: 0.25em;
-	border-radius: 10%;
-}
+			> ul {
+				position: absolute;
+				transform: translate(-16px, 14px);
 
-:not(:checked) + nav > ul > #home:hover {
-	background-color: unset;
-	transform: scale(1.1);
-}
+				box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+				background-color: #F9F9F9;
+				color: black;
+				padding: 0;
 
-nav li > a {
-	all: unset;
-}
+				display: none;
 
-nav > ul > li > ul {
-	position: absolute;
-	transform: translate(-16px, 14px);
+				> li {
+					display: block;
 
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	background-color: #F9F9F9;
-	color: black;
-	padding: 0;
+					&:hover {
+						background-color: #DDD;
+					}
+				}
+			}
 
-	display: none;
-}
+			> input[type="checkbox"] {
+				all: unset;
+				background: white;
+				width: 0.5em;
+				height: 0.5em;
+				display: inline-block;
+				clip-path: polygon(0 0, 50% 100%, 100% 0);
+				transition: clip-path 0.2s;
 
-nav > ul > li > input[type="checkbox"] {
-	all: unset;
-	background: white;
-	width: 0.5em;
-	height: 0.5em;
-	display: inline-block;
-	clip-path: polygon(0 0, 50% 100%, 100% 0);
-	transition: clip-path 0.2s;
-}
+				&:checked {
+					clip-path: polygon(50% 0, 0 100%, 100% 100%);
 
-nav > ul > li > input[type="checkbox"]:checked {
-	clip-path: polygon(50% 0, 0 100%, 100% 100%);
-}
+					+ ul {
+						display: block;
+					}
+				}
+			}
+		}
+	}
 
-nav > ul > li > :checked + ul {
-	display: block;
-}
+	#responsive:not(:checked) + & > ul > #home > a::after {
+		content: "Tomáš Wróbel";
+		font-family: serif;
+	}
 
-nav > ul > li > ul > li:hover {
-	background-color: #DDD;
-}
+	#responsive:not(:checked) + nav > ul > #home > a::before {
+		content: "TW";
+		font-family: cursive;
+		margin-right: 0.5em;
+		font-size: 0.9em;
+		background: blue;
+		padding: 0.25em;
+		border-radius: 10%;
+	}
 
-nav > ul > li > ul > li {
-	display: block;
+	#responsive:not(:checked) + nav > ul > #home:hover {
+		background-color: unset;
+		transform: scale(1.1);
+	}
 }
 
 main, aside {

@@ -1,0 +1,49 @@
+---
+---
+
+@use "sass:math";
+
+.certificate {
+	aspect-ratio: #{math.sqrt(2)} / 1;
+	border: 0;
+	width: 100%;
+	background: #AAA;
+	position: relative;
+	display: block;
+
+	h3 {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.pagination {
+	> a {
+		float: left;
+		color: #000;
+		padding: 8px 16px;
+		text-decoration: none;
+		transition: background-color .3s;
+	}
+
+	> a.active {
+		background-color: blue;
+		color: white;
+	}
+
+	> a:hover {
+		text-decoration: none;
+
+		&[href]:not(.active) {
+			background-color: #DDD;
+		}
+	}
+}
+
+.line {
+	border: none;
+	border-top: 1px solid #000;
+	text-align: center;
+}
