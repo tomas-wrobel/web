@@ -32,13 +32,11 @@ nav, header, #corner {
 
 aside {
 	grid-area: aside;
-	width: 1fr;
+	max-width: fit-content;
 }
 
-iframe[name="main"] {
+main {
 	grid-area: main;
-	width: 100%;
-	height: 100%;
 }
 
 footer {
@@ -143,13 +141,9 @@ nav > ul > li > ul > li {
 	display: block;
 }
 
-aside {
+main, aside {
 	padding: 10px;
 	overflow: auto;
-}
-
-iframe[name="main"] {
-	border: 0;
 }
 
 header {
