@@ -1,6 +1,6 @@
 <h2>Certificates</h2>
 <style>@import url("/styles/certificates.css");</style>
-{% assign certificates = site.static_files | where: "extname", "pdf" %}
+{% assign certificates = site.static_files | where: "extname", ".pdf" %}
 {% assign page = include.page | minus: 1 %}
 {% for certificate in certificates offset: page limit: 3 %}
     <object data="{{certificate.path}}" class="certificate">
