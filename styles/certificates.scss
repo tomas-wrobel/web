@@ -1,10 +1,8 @@
+--- 
 ---
----
-
-@use "sass:math";
 
 .certificate {
-	aspect-ratio: #{math.sqrt(2)} / 1;
+	aspect-ratio: #{sqrt(2)} / 1;
 	border: 0;
 	width: 100%;
 	background: #AAA;
