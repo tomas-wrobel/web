@@ -1,26 +1,29 @@
+---
+layout: default
+---
 <h2>Certificates</h2>
 <style>@import url("/styles/certificates.css");</style>
 {% assign certificates = site.static_files | where: "extname", ".pdf" %}
-{% assign page = include.page | minus: 1 %}
-{% for certificate in certificates offset: page limit: 3 %}
+{% assign index = page.slug | minus: 1 %}
+{% for certificate in certificates offset: index limit: 3 %}
     <object data="{{certificate.path}}" class="certificate">
-		<h3>{certificate.basename}</h3>
+		<h3>{{certificate.basename}}</h3>
 		<p>Your browser doesn't support embedding PDFs.</p>
 	</object>
 {% endfor %}
 {% assign pages = certificates.size | divided_by: 3 %}
 <div class="pagination">
-	{% if page > 1 %}
-		<a href="certificates/{{include.page}}.html">&laquo;</a>
+	{% if index > 1 %}
+		<a href="{{include.index}}">&laquo;</a>
 	{% endif %}
 	{% for n in (1..pages) %}
-		{% if n == page %}
-			<a href="certificates/{{n}}.html" class="active">{{n}}</a>
+		{% if n == index %}
+			<a href="{{n}}" class="active">{{n}}</a>
 		{% else %}
-			<a href="certificates/{{n}}.html">{{n}}</a>
+			<a href="{{n}}">{{n}}</a>
 		{% endif %}
 	{% endfor %}
-	{% if page < pages %}
-		<a href="certificates/{{page | plus: 1}}.html">&raquo;</a>
+	{% if index < pages %}
+		<a href="{{index | plus: 1}}">&raquo;</a>
 	{% endif %}
 </div>
