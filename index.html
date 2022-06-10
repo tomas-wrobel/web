@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jak tvořit web</title>
+
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<h1>Tomáš Wróbel</h1>
+		</header>
+		<a href="https://github.com/tomas-wrobel/tomas-wrobel.github.io" id="corner">
+			<svg width="80" height="80" viewBox="0 0 2500 2500" aria-hidden="true">
+				<path d="M0,0 L1150,1150 L1300,1150 L1420,1420 L2500,2500 L2500,0 Z"></path>
+				<path d="M1283,1090 C1138,997 1190,896 1190,896 C1220,827 1205,786 1205,786 C1192,720 1234,763 1234,763 C1273,809 1255,873 1255,873 C1229,976 1306,1019 1344,1032" fill="currentColor"></path>
+				<path d="M1150,1150 C1149,1151 1187,1165 1198,1154 L1337,1016 C1369,992 1399,984 1422,986 C1338,880 1275,744 1438,580 C1485,534 1540,512 1597,510 C1603,494 1632,436 1714,401 C1714,401 1761,425 1788,562 C1831,586 1872,618 1909,654 C1945,690 1977,732 2001,776 C2138,802 2163,849 2163,849 C2127,931 2069,960 2054,966 C2051,1024 2030,1078 1983,1125 C1819,1289 1683,1225 1577,1141 C1579,1169 1567,1209 1527,1249 L1410,1365 C1398,1377 1416,1419 1418,1418 Z" fill="currentColor"></path>
+			</svg>
+		</a>
+		<input type="checkbox" id="responsive">
+		<nav>
+			<ul>
+				<li><label for="responsive"></label></li>
+				<li id="home"><a href="pages/main.md" target="main"></a></li>
+				<li><a href="pages/certificates.md" target="main">Certificates</a></li>
+				<li>
+					<label for="dropdown">Certificates</label>
+					<input type="checkbox" id="dropdown">
+					<ul>
+						<li>by SoloLearn</li>
+						<li>by freeCodeCamp</li>
+						<li>by Programming Hub</li>
+					</ul>
+				</li>
+				<li><a href="/html/">HTML</a></li>
+				<li><a href="/css/">CSS</a></li>
+				<li><a href="/javascript/">JavaScript</a></li>
+				<li><a href="/all/">Všechno do kupy</a></li>
+			</ul>
+		</nav>
+		<aside>
+			<section>
+				<h1>About me</h1>
+			</section>
+		</aside>
+		<iframe src="pages/main.html" name="main"></iframe>
+		<footer>
+			&copy; Tomáš Wróbel 2022.
+			<a href="#wrap">Nahoru</a>
+		</footer>
+	</div>
+</body>
+</html>
