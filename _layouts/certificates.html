@@ -20,7 +20,7 @@ layout: default
 	{% if length > 3 %}
 		{% continue %}
 	{% endif %}
-    <object data='{{certificate.path | replace: "#", "%23"}}' class="certificate">
+    <object data='{{certificate.path | replace: "#", "%23"}}#toolbar=0&navpanes=0&scrollbar=0' class="certificate">
 		<h3>{{certificate.basename}}</h3>
 		<p>Your browser doesn't support embedding PDFs.</p>
 	</object>
