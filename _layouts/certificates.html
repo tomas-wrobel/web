@@ -17,6 +17,9 @@ layout: default
 	{% else %}
 		{% continue %}
 	{% endif %}
+	{% if length > 3 %}
+		{% continue %}
+	{% endif %}
     <object data='{{certificate.path | replace: "#", "%23"}}' class="certificate">
 		<h3>{{certificate.basename}}</h3>
 		<p>Your browser doesn't support embedding PDFs.</p>
