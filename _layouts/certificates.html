@@ -9,10 +9,10 @@ layout: default
 {% assign skip = index | times: 3 %}
 {% for certificate in site.static_files %}
 	{% if certificate.extname == ".pdf" and certificate.path contains page.dir %}
-		{% if skip > 0 %}
+		{% unless skip > 0 %}
 			{% assign skip = skip | minus: 1 %}
 			{% continue %}
-		{% endif %}
+		{% endunless %}
 		{% assign length = length | plus: 1 %}
 	{% else %}
 		{% continue %}
@@ -24,7 +24,6 @@ layout: default
 		<h3>{{certificate.basename}}</h3>
 		<p>Your browser doesn't support embedding PDFs.</p>
 	</object>
-	<br>
 	<br>
 {% endfor %}
 {% assign pages = length | divided_by: 3.0 | ceil %}
@@ -43,3 +42,4 @@ layout: default
 		<a href="{{index | plus: 1}}">&raquo;</a>
 	{% endif %}
 </div>
+<br>
