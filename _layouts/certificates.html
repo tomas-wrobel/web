@@ -27,7 +27,7 @@ layout: default
 	<br>
 	<br>
 {% endfor %}
-{% assign pages = length | divided_by: 3 %}
+{% assign pages = length | divided_by: 3.0 | ceil %}
 <div class="pagination">
 	{% if index > 1 %}
 		<a href="{{index | minus: 1}}">&laquo;</a>
