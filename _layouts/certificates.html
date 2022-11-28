@@ -4,7 +4,7 @@ layout: default
 <h2>Certificates</h2>
 <style>@import url("/styles/certificates.css");</style>
 {% assign certificates = site.static_files | where: "extname", ".pdf" %}
-{% assign index = page.name | remove_first: ".html" | minus: 1 %}
+{% assign index = page.name | remove_first: ".html" %}
 {% assign length = 0 %}
 {% assign skip = index | times: 3 %}
 {% for certificate in site.static_files %}
