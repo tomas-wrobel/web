@@ -4,8 +4,19 @@ layout: default
 <h2>Certificates</h2>
 <style>@import url("/styles/certificates.css");</style>
 {% assign certificates = site.static_files | where: "extname", ".pdf" %}
-{% assign index = page.slug | minus: 1 %}
-{% for certificate in certificates offset: index limit: 3 %}
+{% assign index = page.name | remove_first: ".html" | minus: 1 %}
+{% assign length = 0 %}
+{% assign skip = index | times: 3 %}
+{% for certificate in site.static_files %}
+	{% if certificate.extname == ".pdf" and certificate.path contains page.dir %}
+		{% if skip > 0 %}
+			{% assign skip = skip | minus: 1 %}
+			{% continue %}
+		{% endif %}
+		{% assign length = length | plus: 1 %}
+	{% else %}
+		{% continue %}
+	{% endif %}
     <object data='{{certificate.path | replace: "#", "%23"}}' class="certificate">
 		<h3>{{certificate.basename}}</h3>
 		<p>Your browser doesn't support embedding PDFs.</p>
@@ -13,10 +24,10 @@ layout: default
 	<br>
 	<br>
 {% endfor %}
-{% assign pages = certificates.size | divided_by: 3 %}
+{% assign pages = length | divided_by: 3 %}
 <div class="pagination">
 	{% if index > 1 %}
-		<a href="{{page.slug}}">&laquo;</a>
+		<a href="{{index | minus: 1}}">&laquo;</a>
 	{% endif %}
 	{% for n in (1..pages) %}
 		{% if n == index %}
