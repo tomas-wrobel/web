@@ -1,0 +1,11 @@
+name: certification-pages
+run-name: Injecting certification pages...
+
+on: page_build
+
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    steps:
+      - run: bash ./inject.sh
+      

@@ -9,6 +9,14 @@
 	<link rel="stylesheet" href="/styles/style.css">
 	<meta name="description" content="{{site.description}}">
 	<link rel="shortcut icon" href="/images/favicon.svg" type="image/svg+xml">
+
+	{% if page.thumbnail %}
+		<meta property="og:image" content="{{page.thumbnail}}">
+	{% else %}
+		<meta property="og:image" content="{{site.thumbnail}}">
+	{% endif %}
+
+	<meta property="og:title" content="{{page.title}}">
 </head>
 <body>
 	<div id="wrap">
