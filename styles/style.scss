@@ -42,6 +42,10 @@ aside {
 }
 
 main {
+	grid-area: aside / aside / aside / main;
+}
+
+aside + main {
 	grid-area: main;
 }
 
