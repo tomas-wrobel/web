@@ -23,7 +23,7 @@
 		<header>
 			<h1>Tomáš Wróbel</h1>
 		</header>
-		<a href="https://github.com/tomas-wrobel/tomas-wrobel.github.io" id="corner">
+		<a href="{{site.github.repository_url}}" id="corner">
 			<svg width="80" height="80" viewBox="0 0 2500 2500" aria-hidden="true">
 				<path d="M0,0 L1150,1150 L1300,1150 L1420,1420 L2500,2500 L2500,0 Z"></path>
 				<path d="M1283,1090 C1138,997 1190,896 1190,896 C1220,827 1205,786 1205,786 C1192,720 1234,763 1234,763 C1273,809 1255,873 1255,873 C1229,976 1306,1019 1344,1032" fill="currentColor"></path>
@@ -47,12 +47,11 @@
 				</li>
 			</ul>
 		</nav>
+		{% unless page.name == "index.html" %}
 		<aside>
-			<section>
-				<h2>About me</h2>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores deserunt labore porro omnis, a dolor animi nulla voluptas velit quod possimus quidem nemo in perferendis soluta, sed culpa. Maxime, quisquam.</p>
-			</section>
+			{% include about.md %}
 		</aside>
+		{% endunless %}
 		<main>
 			{{content}}
 		</main>
