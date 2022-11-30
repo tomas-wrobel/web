@@ -1,7 +1,7 @@
 name: certification-pages
 run-name: Injecting certification pages...
 
-on: page_build
+on: push
 
 jobs:
   inject:
