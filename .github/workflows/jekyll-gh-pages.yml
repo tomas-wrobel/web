@@ -34,7 +34,7 @@ jobs:
           function inject {
             local END=`find . -type f -name '*.pdf' -printf x | wc -c`
             for ((i=1;i<=END;i+=3)); do
-              echo "---\nlayout: certificates\n---" > $i.html
+              echo -e "---\nlayout: certificates\n---" > $i.html
             done
           }
 
