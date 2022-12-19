@@ -42,10 +42,9 @@ jobs:
 
           for d in *; do
             cd $d
-            if [ -d "${D}" ]; then
+            if [ -d "${d}" ]; then
               inject
             fi
-            inject
           done
       - name: Setup Pages
         uses: actions/configure-pages@v2
