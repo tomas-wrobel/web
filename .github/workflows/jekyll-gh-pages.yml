@@ -32,7 +32,7 @@ jobs:
           cd certificates
 
           function inject {
-            local END = ${find . -type f -name '*.pdf' -printf x | wc -c}
+            local END=${find . -type f -name '*.pdf' -printf x | wc -c}
             for ((i=1;i<=END;i+=3)); do
                 touch $i.html
             done
