@@ -40,8 +40,8 @@ jobs:
 
           inject
 
-          for d in */; do
-              cd ./$d
+          for d in *; do
+            cd $d
             inject
           done
       - name: Setup Pages
