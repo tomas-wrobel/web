@@ -41,6 +41,7 @@ jobs:
           inject
 
           for d in `find . -maxdepth 1 -mindepth 1 -type d`; do
+            cd "$(dirname ${0})"
             cd $d
             inject
           done
