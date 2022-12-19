@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Tomáš Wróbel | Certificates
 ---
 <h2>Certificates</h2>
 <style>@import url("/styles/certificates.css");</style>
@@ -20,7 +21,9 @@ layout: default
 	{% if length > 3 %}
 		{% continue %}
 	{% endif %}
-    <object data='{{certificate.path | replace: "#", "%23"}}#toolbar=0&navpanes=0&scrollbar=0' class="certificate">
+	{% assign padding = certificate.basename | size | modulo: 3 %}
+
+    <object data="{{certificate.path}}#toolbar=0&navpanes=0&scrollbar=0" class="certificate">
 		<h3>{{certificate.basename}}</h3>
 		<p>Your browser doesn't support embedding PDFs.</p>
 	</object>
