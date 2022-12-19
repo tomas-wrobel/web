@@ -1,7 +1,0 @@
-defaults:
-  - 
-    scope:
-      path: "certificates"
-      type: "pages"
-    values:
-      layout: "certificates"
