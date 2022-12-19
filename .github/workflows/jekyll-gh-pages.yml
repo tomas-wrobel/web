@@ -34,7 +34,7 @@ jobs:
           function inject {
             local END=`find . -type f -name '*.pdf' -printf x | wc -c`
             for ((i=1;i<=END;i+=3)); do
-                touch $i.html
+              touch $i.html
             done
           }
 
@@ -42,6 +42,9 @@ jobs:
 
           for d in *; do
             cd $d
+            if [ -d "${D}" ]; then
+              inject
+            fi
             inject
           done
       - name: Setup Pages
