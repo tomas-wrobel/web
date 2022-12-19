@@ -32,7 +32,8 @@ jobs:
           cd certificates
 
           function inject {
-            for ((i=1;i<=${find . -type f -name '*.pdf' -printf x | wc -c};i+=3)); do
+            local END = ${find . -type f -name '*.pdf' -printf x | wc -c}
+            for ((i=1;i<=END;i+=3)); do
                 touch $i.html
             done
           }
