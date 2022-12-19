@@ -41,7 +41,7 @@ jobs:
           inject
 
           for d in */; do
-              cd $d
+              cd certificates/$d
             inject
           done
       - name: Setup Pages
