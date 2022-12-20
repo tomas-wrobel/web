@@ -34,9 +34,11 @@ jobs:
           cd certificates
 
           function inject {
-            local END=`find . -type f -name '*.pdf' -printf x | wc -c`
-            for ((i=1;i<=END;i+=3)); do
+            local a=`find -type f | wc -l`
+            local count=$((a + 2) / 3))
+            for i in $(seq $count); do
               echo -e "---\nlayout: certificates\n---" > $i.html
+              echo "Certifiate no. $i"
             done
           }
 
