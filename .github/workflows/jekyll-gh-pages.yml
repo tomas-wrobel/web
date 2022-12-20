@@ -34,8 +34,8 @@ jobs:
           cd certificates
 
           function inject {
-            local a=`find -type f | wc -l` + 2
-            local count=a / 3
+            local a=`find -type f | wc -l`
+            local count=$(((a + 2) / 3))
             for i in $(seq $count); do
               echo -e "---\nlayout: certificates\n---" > $i.html
               echo "Certifiate no. $i"
