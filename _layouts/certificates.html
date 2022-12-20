@@ -5,7 +5,7 @@ title: Tomáš Wróbel | Certificates
 <h2>Certificates</h2>
 <style>@import url("/styles/certificates.css");</style>
 {% assign certificates = site.static_files | where: "extname", ".pdf" %}
-{% assign index = page.name | remove_first: ".html" | plus: 0 %}
+{% assign index = page.name | remove_first: ".html" | minus: 1 %}
 {% assign length = 0 %}
 {% assign skip = index | times: 3 %}
 {% assign files = 0 %}
@@ -32,20 +32,19 @@ title: Tomáš Wróbel | Certificates
 	</object>
 	<br>
 {% endfor %}
-{% assign pages = files | divided_by: 3.0 | ceil %}
+{% assign pages = files | divided_by: 3.0 | ceil | minus: 1 %}
 <div class="pagination">
-	{% if index > 1 %}
-		<a href="{{index | minus: 1}}">&laquo;</a>
+	{% if index > 0 %}
+		<a href="{{index}}">&laquo;</a>
 	{% endif %}
-	{% for n in (1..pages) %}
+	{% for n in (0..pages) %}
 		{% if n == index %}
-			<a href="{{n}}" class="active"></a>
+			<a href="{{n | plus: 1}}" class="active"></a>
 		{% else %}
-			<a href="{{n}}"></a>
+			<a href="{{n | plus: 1}}"></a>
 		{% endif %}
 	{% endfor %}
 	{% if index < pages %}
-		<a href="{{index | plus: 1}}">&raquo;</a>
+		<a href="{{index | plus: 2}}">&raquo;</a>
 	{% endif %}
 </div>
-<br>
