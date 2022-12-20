@@ -35,7 +35,7 @@ jobs:
 
           function inject {
             local a=`find -type f | wc -l`
-            local count=$((a + 2) / 3))
+            local count=$((a + 2) / 3)
             for i in $(seq $count); do
               echo -e "---\nlayout: certificates\n---" > $i.html
               echo "Certifiate no. $i"
