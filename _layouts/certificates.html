@@ -23,7 +23,8 @@ title: Tomáš Wróbel | Certificates
 	{% endif %}
 	{% assign padding = certificate.basename | size | modulo: 3 %}
 
-    <object data="{{certificate.path}}#toolbar=0&navpanes=0&scrollbar=0" class="certificate">
+	<h3>{{certificate.basename}}</h3>
+    <object data="{{certificate.path | uri_escape}}#toolbar=0&navpanes=0&scrollbar=0" class="certificate">
 		<h3>{{certificate.basename}}</h3>
 		<p>Your browser doesn't support embedding PDFs.</p>
 	</object>
@@ -36,9 +37,9 @@ title: Tomáš Wróbel | Certificates
 	{% endif %}
 	{% for n in (1..pages) %}
 		{% if n == index %}
-			<a href="{{n}}" class="active">{{n}}</a>
+			<a href="{{n}}" class="active"></a>
 		{% else %}
-			<a href="{{n}}">{{n}}</a>
+			<a href="{{n}}"></a>
 		{% endif %}
 	{% endfor %}
 	{% if index < pages %}

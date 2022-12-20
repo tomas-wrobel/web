@@ -26,6 +26,10 @@
 		transition: background-color .3s;
 	}
 
+	> a:empty::after {
+		content: attr(href);
+	}
+
 	> a.active {
 		background-color: blue;
 		color: white;
