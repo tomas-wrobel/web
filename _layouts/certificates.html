@@ -10,10 +10,10 @@ title: Tomáš Wróbel | Certificates
 {% assign skip = index | times: 3 %}
 {% for certificate in site.static_files %}
 	{% if certificate.extname == ".pdf" and certificate.path contains page.dir %}
-		{% unless skip > 0 %}
+;		{% if skip > 0 %}
 			{% assign skip = skip | minus: 1 %}
 			{% continue %}
-		{% endunless %}
+		{% endif %}
 		{% assign length = length | plus: 1 %}
 	{% else %}
 		{% continue %}
