@@ -8,8 +8,10 @@ title: Tomáš Wróbel | Certificates
 {% assign index = page.name | remove_first: ".html" | plus: 0 %}
 {% assign length = 0 %}
 {% assign skip = index | times: 3 %}
+{% assign files = 0 %}
 {% for certificate in site.static_files %}
 	{% if certificate.extname == ".pdf" and certificate.path contains page.dir %}
+		{% assign files = files | plus: 1 %}
 		{% if skip > 0 %}
 			{% assign skip = skip | minus: 1 %}
 			{% continue %}
@@ -30,7 +32,7 @@ title: Tomáš Wróbel | Certificates
 	</object>
 	<br>
 {% endfor %}
-{% assign pages = length | divided_by: 3.0 | ceil %}
+{% assign pages = files | divided_by: 3.0 | ceil %}
 <div class="pagination">
 	{% if index > 1 %}
 		<a href="{{index | minus: 1}}">&laquo;</a>
