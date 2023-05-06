@@ -1,7 +1,3 @@
----
-layout: default
-title: Tomáš Wróbel | Home
----
 ## My website
 Welcome! This is a completely static website. This means no JavaScript, no tracking.
 
