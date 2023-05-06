@@ -67,76 +67,29 @@ nav {
 	z-index: 20;
 	top: 0;
 
-	li {
-		all: unset;
-		display: inline-block;
-		font-size: 17px;
-		text-align: center;
-		cursor: pointer;
-
-		> a {
-			all: unset;
-			display: inline-block;
-			padding: 14px 16px;
-		}
-	}
-
 	> ul {
 		display: contents;
 
 		> li {
+			all: unset;
 			color: white;
+			display: inline-block;
+			font-size: 17px;
+			text-align: center;
+			cursor: pointer;
+
+			> a {
+				all: unset;
+				display: inline-block;
+			}
 
 			&:hover {
 				background-color: blue;
 			}
 
-			> ul {
-				position: absolute;
-				transform: translate(-16px, 14px);
-
-				box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-				background-color: #F9F9F9;
-				color: black;
-				padding: 0;
-
-				display: none;
-
-				> li {
-					display: block;
-
-					&:hover {
-						background-color: #DDD;
-					}
-				}
-			}
-
-			> label {
-				padding: 14px 2px 14px 16px;
-				display: inline-block;
-			}
-
-			> #responsive {
+			> label, 
+			> a {
 				padding: 14px 16px;
-			}
-
-			> input[type="checkbox"] {
-				all: unset;
-				background: white;
-				width: 0.5em;
-				height: 0.5em;
-				margin-right: 16px;
-				display: inline-block;
-				clip-path: polygon(0 0, 50% 100%, 100% 0);
-				transition: clip-path 0.2s;
-
-				&:checked {
-					clip-path: polygon(50% 0, 0 100%, 100% 100%);
-
-					+ ul {
-						display: block;
-					}
-				}
 			}
 		}
 	}
@@ -146,7 +99,7 @@ nav {
 		font-family: serif;
 	}
 
-	#responsive:not(:checked) + nav > ul > #home > a::before {
+	#responsive:not(:checked) + & > ul > #home > a::before {
 		content: "TW";
 		font-family: cursive;
 		margin-right: 0.5em;
@@ -156,7 +109,7 @@ nav {
 		border-radius: 10%;
 	}
 
-	#responsive:not(:checked) + nav > ul > #home:hover {
+	#responsive:not(:checked) + & > ul > #home:hover {
 		background-color: unset;
 		transform: scale(1.1);
 	}
