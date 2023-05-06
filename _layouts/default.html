@@ -17,6 +17,7 @@
 	{% endif %}
 
 	<meta property="og:title" content="{{layout.title}}">
+	<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </head>
 <body>
 	<div id="wrap">
@@ -39,19 +40,54 @@
 					<label for="dropdown">Certificates</label>
 					<input type="checkbox" id="dropdown">
 					<ul>
-						<li><a href="/certificates/sololearn/1">by SoloLearn</a></li>
-						<li><a href="/certificates/freecodecamp/1">by freeCodeCamp</a></li>
-						<li><a href="/certificates/programming-hub/1">Programming Hub</a></li>
-						<li><a href="/certificates/1">All</a></li>
+						<li><a href="/cerificate/sololearn/1">by SoloLearn</a></li>
+						<li><a href="/cerificate/freecodecamp/1">by freeCodeCamp</a></li>
+						<li><a href="/cerificate/1">Both</a></li>
 					</ul>
 				</li>
 			</ul>
 		</nav>
-		{% unless page.name == "index.html" %}
 		<aside>
-			{% include about.html %}
+			{% assign nowTimestamp = 'now' | date: '%s' %}
+			{% assign diffSeconds = nowTimestamp | minus: 1160172000 %}
+			{% assign diffYears = diffSeconds | divided_by: 3600 | divided_by: 24 | divided_by: 365 %}
+			<section>
+				<h2>About me</h2>
+				<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="tomas-wrobel" data-version="v1">
+					<a class="badge-base__link LI-simple-link" href="https://cz.linkedin.com/in/tomas-wrobel?trk=profile-badge">Tomáš Wróbel</a>
+				</div>
+				<p>Hello,<br><br>
+					I'm Tomáš Wróbel and this is my website. I'm from <a href="https://en.wikipedia.org/wiki/Czechia" target="_blank">Czechia</a>
+					and I'm <strong>{{diffYears}}</strong> years old. I'm a <a href="https://en.wikipedia.org/wiki/Computer_programmer" target="_blank">programmer</a>.
+				</p>
+				<p>
+					I can write code in
+					<ul>
+						<li><a href="https://en.wikipedia.org/wiki/Dart_(programming_language)">Dart</a> (with Flutter),</li>
+						<li><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>,</li>
+						<li><a href="https://en.wikipedia.org/wiki/TypeScript" target="_blank">TypeScript</a>,</li>
+						<li><a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML</a>,</li>
+						<li><a href="https://en.wikipedia.org/wiki/CSS" target="_blank">CSS</a>,</li>
+						<li><a href="https://en.wikipedia.org/wiki/Markdown" target="_blank">Markdown</a>,</li>
+						<li><a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>,</li>
+						<li><a href="https://en.wikipedia.org/wiki/YAML" target="_blank">YAML</a>,</li>
+						<li>and some other languages.</li>
+					</ul>
+				</p>
+			</section>
+			<section>
+				<h2>About the website</h2>
+				<p>
+					This website is made with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+					You can find the source code on <a href="{{site.github.repository_url}}" target="_blank">GitHub</a>.
+				</p>
+				<h2>Under reconstruction</h2>
+				<p>
+					This website is under reconstruction. I'm working on it and I'm adding new content.
+					Also, new projects are coming soon.
+				</p>
+			</section>
 		</aside>
-		{% endunless %}
 		<main>
 			{{content}}
 		</main>

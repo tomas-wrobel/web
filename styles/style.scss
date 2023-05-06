@@ -19,7 +19,7 @@ html, body {
 		"footer footer footer footer footer"
 	;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: 100vh 100vh auto;
+	grid-template-rows: 100vh auto auto;
 }
 
 // Checkbox
@@ -72,11 +72,12 @@ nav {
 		display: inline-block;
 		font-size: 17px;
 		text-align: center;
-		padding: 14px 16px;
 		cursor: pointer;
 
 		> a {
 			all: unset;
+			display: inline-block;
+			padding: 14px 16px;
 		}
 	}
 
@@ -110,11 +111,17 @@ nav {
 				}
 			}
 
+			> label {
+				padding: 14px 2px 14px 16px;
+				display: inline-block;
+			}
+
 			> input[type="checkbox"] {
 				all: unset;
 				background: white;
 				width: 0.5em;
 				height: 0.5em;
+				margin-right: 16px;
 				display: inline-block;
 				clip-path: polygon(0 0, 50% 100%, 100% 0);
 				transition: clip-path 0.2s;

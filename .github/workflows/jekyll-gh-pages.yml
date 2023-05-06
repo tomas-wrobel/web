@@ -27,11 +27,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          submodules: 'true'
       - name: Inject certificates page
         run: >
-          cd certificates
+          cd cerificate
 
           function inject {
             local a=`find -type f | wc -l`
