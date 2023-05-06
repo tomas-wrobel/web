@@ -1,9 +1,7 @@
 ---
 layout: default
-title: Tomáš Wróbel | Certificates
 ---
 <h2>Certificates</h2>
-<style>@import url("/styles/certificates.css");</style>
 {% assign certificates = site.static_files | where: "extname", ".pdf" %}
 {% assign index = page.name | remove_first: ".html" | minus: 1 %}
 {% assign length = 0 %}
