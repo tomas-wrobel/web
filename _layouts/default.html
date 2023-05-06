@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{page.title}}</title>
 
 	<link rel="stylesheet" href="/styles/style.css">
 	<meta name="description" content="{{site.description}}">
@@ -16,7 +15,13 @@
 		<meta property="og:image" content="{{site.thumbnail}}">
 	{% endif %}
 
-	<meta property="og:title" content="{{page.title}}">
+	{% if page.title %}
+		<meta property="og:title" content="{{page.title}}">
+		<title>{{page.title}}</title>
+	{% else %}
+		<meta property="og:title" content="{{layout.title}}">
+		<title>{{layout.title}}</title>
+	{% endif %}
 </head>
 <body>
 	<div id="wrap">
@@ -39,9 +44,9 @@
 					<label for="dropdown">Certificates</label>
 					<input type="checkbox" id="dropdown">
 					<ul>
-						<li><a href="/cerificate/sololearn/1">by SoloLearn</a></li>
-						<li><a href="/cerificate/freecodecamp/1">by freeCodeCamp</a></li>
-						<li><a href="/cerificate/1">Both</a></li>
+						<li><a href="/certificates/sololearn/1">by SoloLearn</a></li>
+						<li><a href="/certificates/freecodecamp/1">by freeCodeCamp</a></li>
+						<li><a href="/certificates/1">Both</a></li>
 					</ul>
 				</li>
 			</ul>
