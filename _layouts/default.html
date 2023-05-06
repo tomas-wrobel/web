@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{layout.title}}</title>
+	<title>{{page.title}}</title>
 
 	<link rel="stylesheet" href="/styles/style.css">
 	<meta name="description" content="{{site.description}}">
@@ -16,8 +16,7 @@
 		<meta property="og:image" content="{{site.thumbnail}}">
 	{% endif %}
 
-	<meta property="og:title" content="{{layout.title}}">
-	<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+	<meta property="og:title" content="{{page.title}}">
 </head>
 <body>
 	<div id="wrap">
@@ -53,11 +52,8 @@
 			{% assign diffYears = diffSeconds | divided_by: 3600 | divided_by: 24 | divided_by: 365 %}
 			<section>
 				<h2>About me</h2>
-				<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="tomas-wrobel" data-version="v1">
-					<a class="badge-base__link LI-simple-link" href="https://cz.linkedin.com/in/tomas-wrobel?trk=profile-badge">Tomáš Wróbel</a>
-				</div>
-				<p>Hello,<br><br>
-					I'm Tomáš Wróbel and this is my website. I'm from <a href="https://en.wikipedia.org/wiki/Czechia" target="_blank">Czechia</a>
+				<p>
+					Hello,<br><br>I'm Tomáš Wróbel and this is my website. I'm from <a href="https://en.wikipedia.org/wiki/Czechia" target="_blank">Czechia</a>
 					and I'm <strong>{{diffYears}}</strong> years old. I'm a <a href="https://en.wikipedia.org/wiki/Computer_programmer" target="_blank">programmer</a>.
 				</p>
 				<p>

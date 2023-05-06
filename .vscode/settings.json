@@ -4,5 +4,6 @@
 	},
 	"files.associations": {
 		"*.html": "liquid"
-	}
+	},
+	"github-actions.workflows.pinned.workflows": []
 }
