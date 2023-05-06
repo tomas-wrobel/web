@@ -2,33 +2,31 @@
 layout: default
 ---
 <h2>Contact me</h2>
-<form action="https://api.web3forms.com/submit">
-	<form action="https://api.web3forms.com/submit" method="POST">
-		<input type="hidden" name="redirect" value="https://tomaswrobel.dev/contact/success">
+<form action="https://api.web3forms.com/submit" method="POST">
+	<input type="hidden" name="redirect" value="https://tomaswrobel.dev/contact/success">
 
-		<label for="to">
-			To:
-		</label>
-		<select name="access_key" id="to">
-			<option value="132ccabe-63a2-4965-a0cc-474f44c37128">programming@tomaswrobel.dev</option>
-			<option value="c722328f-2d62-4d1b-a63f-20b5a02486cb" selected>personal@tomaswrobel.dev</option>
-		</select>
+	<label for="to">
+		To:
+	</label>
+	<select name="access_key" id="to">
+		<option value="132ccabe-63a2-4965-a0cc-474f44c37128">programming@tomaswrobel.dev</option>
+		<option value="c722328f-2d62-4d1b-a63f-20b5a02486cb" selected>personal@tomaswrobel.dev</option>
+	</select>
 
-		<label for="name">
-			Your name:
-		</label>
-		<input type="text" name="name" required id="name">
+	<label for="name">
+		Your name:
+	</label>
+	<input type="text" name="name" required id="name">
 
-		<label for="from">
-			Your email:
-		</label>
-		<input type="email" name="email" required id="from">
+	<label for="from">
+		Your email:
+	</label>
+	<input type="email" name="email" required id="from">
 
-		<label for="text">
-			Message:
-		</label>
-		<textarea name="message" id="text" required rows="8"></textarea>
+	<label for="text">
+		Message:
+	</label>
+	<textarea name="message" id="text" required rows="8"></textarea>
 
-		<input type="submit" value="Submit">
-	</form>
+	<input type="submit" value="Submit">
 </form>
