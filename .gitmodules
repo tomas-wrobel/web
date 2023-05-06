@@ -1,3 +1,4 @@
 [submodule "certificates"]
 	path = certificates
 	url = https://github.com/tomas-wrobel/certificates.git
+	branch = main
