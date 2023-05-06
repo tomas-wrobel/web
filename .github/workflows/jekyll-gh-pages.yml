@@ -31,7 +31,7 @@ jobs:
           submodules: 'true'
       - name: Inject certificates page
         run: >
-          cd cerificates
+          cd certificates
 
           function inject {
             local a=`find -type f | wc -l`

@@ -1,0 +1,8 @@
+{
+	"material-icon-theme.languages.associations": {
+		"liquid": "html"
+	},
+	"files.associations": {
+		"*.html": "liquid"
+	}
+}
