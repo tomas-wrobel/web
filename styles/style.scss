@@ -178,6 +178,10 @@ nav > ul > :first-child {
 		background-color: unset;
 	}
 
+	label[for="responsive"] {
+		font-size: 1.5em;
+	}
+
 	label[for="responsive"]::after {
 		content: "≡";
 	}
