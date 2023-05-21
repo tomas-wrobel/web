@@ -1,7 +1,5 @@
----
----
+--- --- // Stop being "Word document"
 
-// Stop being "Word document"
 html, body {
 	padding: 0;
 	margin: 0;
@@ -14,11 +12,11 @@ html, body {
 #wrap {
 	display: grid;
 	grid-template-areas:
-		"header header header header header"
-		"aside main main main main"
-		"footer footer footer footer footer"
+		"header header"
+		"aside main"
+		"footer footer"
 	;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 300px 1fr;
 	grid-template-rows: 100vh auto auto;
 }
 
@@ -87,7 +85,7 @@ nav {
 				background-color: blue;
 			}
 
-			> label, 
+			> label,
 			> a {
 				padding: 14px 16px;
 			}
@@ -152,10 +150,10 @@ nav > ul > :first-child {
 @media (max-width: 640px) {
 	#wrap {
 		grid-template-areas:
-			"header header header header header"
-			"main main main main main"
-			"aside aside aside aside aside"
-			"footer footer footer footer footer"
+			"header header"
+			"main main"
+			"aside aside"
+			"footer footer"
 		;
 		grid-template-rows: 50vh auto auto auto auto;
 	}
