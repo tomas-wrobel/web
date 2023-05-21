@@ -3,7 +3,7 @@
 		"liquid": "html"
 	},
 	"files.associations": {
-		"**/_layouts/*.html": "liquid"
+		"*.html": "liquid"
 	},
 	"github-actions.workflows.pinned.workflows": []
 }

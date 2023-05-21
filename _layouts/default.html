@@ -6,13 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="/styles/style.css">
-	<link rel="stylesheet" href="/styles/contact.css">
-	<link rel="stylesheet" href="/styles/certificates.css">
 	
 	<meta name="description" content="{{site.description}}">
 	<link rel="shortcut icon" href="/images/favicon.svg" type="image/svg+xml">
 
-	<title>Tomáš Wróbel's web</title>
+	{% if layout.title %}
+		<title>Tomáš Wróbel | {{layout.title}}</title>
+	{% elsif page.title %}
+		<title>Tomáš Wróbel | {{page.title}}</title>
+	{% else %}
+		<title>Tomáš Wróbel</title>
+	{% endif %}
 </head>
 <body>
 	<div id="wrap">
@@ -33,6 +37,7 @@
 				<li id="home"><a href="/"></a></li>
 				<li><a href="/certificates/1">Certificates</a></li>
 				<li><a href="/contact/">Contact</a></li>
+				<li><a href="/blog/">Blog</a></li>
 			</ul>
 		</nav>
 		<aside>
