@@ -226,3 +226,13 @@ nav > ul > :first-child {
 		width: 50vw;
 	}
 }
+
+table {
+	border-collapse: collapse;
+
+	> thead > tr > th,
+	> tbody > tr > td {
+		border-bottom: 1px solid lightgray;
+		padding: 10px;
+	}
+}
