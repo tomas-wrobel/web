@@ -1,6 +1,19 @@
 --- 
 --- 
 
+#new-web {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 24px;
+
+	background-color: cornsilk;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
 // Stop being "Word document"
 html, body {
 	padding: 0;
